@@ -513,59 +513,161 @@
         /* ========== Products Section ========== */
         .products {
             background-color: var(--white);
+            padding-bottom: 120px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 20px;
         }
 
         .product-card {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
             text-align: center;
-            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-orange);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
         }
 
-        .product-icon {
-            font-size: 40px;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
+        .product-image-wrapper {
+            width: 100%;
+            height: 320px;
+            background: radial-gradient(circle at center, #ffffff 0%, #f0f4f8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            /* Stylish Frame Effect */
+            margin: 15px;
+            width: calc(100% - 30px);
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(0, 59, 115, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(0, 59, 115, 0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .product-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .product-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card h3 {
-            font-size: 22px;
+            font-size: 24px;
             color: var(--primary-blue);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .product-desc {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .product-features {
             list-style: none;
-            margin-top: 20px;
+            margin-top: auto;
             text-align: right;
+            background: #fcfcfc;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
         }
 
         .product-features li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--text-gray);
             font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-features li:last-child {
+            margin-bottom: 0;
         }
 
         .product-features li i {
-            color: #4CAF50;
-            margin-left: 8px;
+            color: #2ecc71;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .order-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
         }
 
         /* ========== Projects Section ========== */
@@ -924,48 +1026,180 @@
     <section class="products reveal" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>المنتجات</h2>
-                <p>أجهزة تقوية الشبكة المناسبة لكل مساحة</p>
+                <h2>أحدث المنتجات</h2>
+                <p>أقوى أجهزة تقوية الشبكات بأحدث التكنولوجيا العالمية</p>
             </div>
             <div class="products-grid">
+                <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="product-icon"><i data-feather="smartphone"></i></div>
-                    <h3>تغطية 100–300 متر</h3>
-                    <p>حل مثالي للشقق والمكاتب الصغيرة.</p>
-                    <ul class="product-features">
-                        <li><i data-feather="check"></i> دعم 4G – 3G – 2G</li>
-                        <li><i data-feather="check"></i> ضمان 12 شهر</li>
-                    </ul>
+                    <div class="product-image-wrapper">
+                        <img src="assets/HUAWEI QUAD.png" alt="Huawei Quad Band" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Huawei Quad Band High Power</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم جميع الترددات</li>
+                            <li><i data-feather="check-circle"></i> تغطية فائقة للمساحات الكبيرة</li>
+                            <li><i data-feather="shield"></i> ضمان استبدال فوري</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Huawei Quad Band" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="product-icon"><i data-feather="home"></i></div>
-                    <h3>تغطية 300–600 متر</h3>
-                    <p>للفيلات والمساحات المتوسطة.</p>
-                    <ul class="product-features">
-                        <li><i data-feather="check"></i> دعم 4G – 3G – 2G</li>
-                        <li><i data-feather="check"></i> أداء ثابت ومجرب</li>
-                    </ul>
+                    <div class="product-image-wrapper">
+                        <img src="assets/MGOLDEN SHARK.png" alt="Golden Shark" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Shark High Power</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم ذهبي مميز</li>
+                            <li><i data-feather="check-circle"></i> مثالي للمكالمات الصوتية</li>
+                            <li><i data-feather="shield"></i> جودة تصنيع عالية</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Golden Shark" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Product 3 -->
                 <div class="product-card">
-                    <div class="product-icon"><i data-feather="layers"></i></div>
-                    <h3>تغطية 600–1500 متر</h3>
-                    <p>للمباني الكبيرة والشركات.</p>
-                    <ul class="product-features">
-                        <li><i data-feather="check"></i> مواصفات آمنة ومعتمدة</li>
-                        <li><i data-feather="check"></i> ضمان شامل</li>
-                    </ul>
+                    <div class="product-image-wrapper">
+                        <img src="assets/QUAD BAND SILVER.png" alt="Quad Band Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Quad Band Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> شاشة ديجيتال ذكية</li>
+                            <li><i data-feather="check-circle"></i> تحكم تلقائي في الإشارة</li>
+                            <li><i data-feather="shield"></i> هيكل معدني قوي</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Quad Band Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Product 4 -->
                 <div class="product-card">
-                    <div class="product-icon"><i data-feather="maximize"></i></div>
-                    <h3>أنظمة المشاريع الكبرى</h3>
-                    <p>للمولات والمخازن والمصانع الكبيرة.</p>
-                    <ul class="product-features">
-                        <li><i data-feather="check"></i> حلول مخصصة</li>
-                        <li><i data-feather="check"></i> مستلزمات كاملة (كابلات، هوائيات)</li>
-                    </ul>
+                    <div class="product-image-wrapper">
+                        <img src="assets/WINGSTEL TRIBAND.png" alt="Wingstel Triband" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Wingstel Triband Jaguar</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم جاكوار الانسيابي</li>
+                            <li><i data-feather="check-circle"></i> ثلاثي التردد لأداء مستقر</li>
+                            <li><i data-feather="shield"></i> سهولة في التركيب</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Wingstel Triband" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/TRIBLE DISBLAY.png" alt="Triple Display" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Triple Display Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> 3 شاشات لعرض قوة الإشارة</li>
+                            <li><i data-feather="check-circle"></i> يدعم البيانات والمكالمات</li>
+                            <li><i data-feather="shield"></i> تكنولوجيا متطورة</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Triple Display" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/FIVE BAND.png" alt="Five Band Repeater" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Five Band Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم 5 ترددات مختلفة</li>
+                            <li><i data-feather="check-circle"></i> تغطية شاملة لكل الشبكات</li>
+                            <li><i data-feather="shield"></i> أحدث تكنولوجيا في السوق</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Five Band Repeater"
+                            class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK  SILVER.png" alt="Genuinetek Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم فضي أنيق</li>
+                            <li><i data-feather="check-circle"></i> شاشة عرض البيانات</li>
+                            <li><i data-feather="shield"></i> أداء قوي ومستقر</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Genuinetek Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK.png" alt="Genuinetek Gold" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Gold</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> الإصدار الذهبي المطور</li>
+                            <li><i data-feather="check-circle"></i> قوة تكبير إشارة عالية</li>
+                            <li><i data-feather="shield"></i> مناسب للمساحات الواسعة</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Genuinetek Gold" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GOLEN CL SIC.png" alt="Golden Classic" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Classic</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> التصميم الكلاسيكي الموثوق</li>
+                            <li><i data-feather="check-circle"></i> سهل التركيب والاستخدام</li>
+                            <li><i data-feather="shield"></i> تكلفة اقتصادية</li>
+                        </ul>
+                        <a href="https://wa.me/201111014007?text=أريد الاستفسار عن Golden Classic" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
