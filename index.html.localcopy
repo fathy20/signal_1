@@ -1,0 +1,2812 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Antwave - الحل النهائي لمشكلة ضعف شبكة المحمول في مصر. أجهزة تقوية إشارة معتمدة للمنازل والشركات والمصانع.">
+    <meta name="keywords" content="تقوية الشبكة، Antwave، مقوي شبكة، فودافون، اتصالات، اورانج، وي، حلول الشبكات">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Antwave - Antwave | حلول تقوية شبكات المحمول">
+    <meta property="og:description" content="تمتع بإنترنت أسرع ومكالمات بدون تقطيع مع حلول Antwave المعتمدة.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo.png">
+
+    <title>Antwave - Antwave | شبكة قوية في كل مكان</title>
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+
+    <style>
+        /* ========== Reset & Variables ========== */
+        :root {
+            --primary-blue: #003B73;
+            --primary-dark: #002855;
+            --primary-orange: #FFA500;
+            --secondary-orange: #FFB732;
+            --accent-glow: rgba(255, 165, 0, 0.5);
+            --light-bg: #F0F4F8;
+            --white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-dark: #1A1A1A;
+            --text-gray: #555555;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        /* ========== Scrollbar ========== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-orange);
+        }
+
+        /* ========== Animations ========== */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(255, 165, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== Header & Nav ========== */
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-item:hover {
+            color: var(--primary-orange);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* ========== Hero Section ========== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001F3F 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            animation: float 60s linear infinite;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.2s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.4s backwards;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-orange), #FF8C00);
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 165, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        /* ========== Features Grid (Why Choose Us) ========== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            text-align: right;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            color: var(--primary-orange);
+            margin-left: 10px;
+        }
+
+        /* ========== General Layout ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-orange);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ========== About Section ========== */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .about-card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-card h3 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .values-list {
+            list-style: none;
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .values-list li i {
+            color: var(--primary-orange);
+        }
+
+        /* ========== Services Section ========== */
+        .services {
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary-blue);
+            transition: 0.5s ease;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        /* ========== Products Section ========== */
+        .products {
+            background-color: var(--white);
+            padding-bottom: 120px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image-wrapper {
+            width: 100%;
+            height: 320px;
+            background: radial-gradient(circle at center, #ffffff 0%, #f0f4f8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            /* Stylish Frame Effect */
+            margin: 15px;
+            width: calc(100% - 30px);
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(0, 59, 115, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(0, 59, 115, 0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .product-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .product-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .product-desc {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-top: auto;
+            text-align: right;
+            background: #fcfcfc;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .product-features li {
+            margin-bottom: 10px;
+            color: var(--text-gray);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-features li i {
+            color: #2ecc71;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .order-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+        }
+
+        /* ========== Projects Section ========== */
+        .projects {
+            background-color: var(--light-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-right: 5px solid var(--primary-orange);
+        }
+
+        .project-card:hover {
+            transform: translateX(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* ========== FAQ Section ========== */
+        .faq {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 25px;
+            background: none;
+            border: none;
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 25px 20px 25px;
+        }
+
+        /* ========== Contact Section ========== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001021 100%);
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .contact-section .section-title h2::after {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--white);
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .info-content p,
+        .info-content a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background-color: #000d1a;
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 30px;
+                box-shadow: var(--shadow-lg);
+                transition: 0.3s;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========== Top Bar ========== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:01125655647" class="contact-item">
+                    <i data-feather="phone" style="width: 16px; height: 16px;"></i>
+                    <span>01125655647</span>
+                </a>
+                <a href="https://wa.me/201125655647" class="contact-item">
+                    <i data-feather="message-circle" style="width: 16px; height: 16px;"></i>
+                    <span>واتساب</span>
+                </a>
+            </div>
+            <div>
+                <i data-feather="map-pin" style="width: 16px; height: 16px;"></i>
+                عين شمس، القاهرة، مصر
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Header ========== -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo-container">
+                <img src="assets/logo.png" alt="Antwave Logo" class="logo">
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-feather="menu"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#projects">أعمالنا</a></li>
+                <li><a href="#contact" class="btn btn-primary"
+                        style="padding: 8px 25px; font-size: 15px; box-shadow: none;">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>مرحباً بكم في Antwave</h1>
+            <p>في Antwave بنقدّم لك الحل النهائي لمشكلة ضعف شبكة المحمول في البيت، الشركة، المصنع أو أي مكان بيعاني
+                من سوء التغطية. استمتع بإنترنت أسرع ومكالمات بدون تقطيع.</p>
+
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i data-feather="phone-call"></i>
+                    اطلب الآن
+                </a>
+                <a href="https://wa.me/201125655647" class="btn btn-secondary">
+                    <i data-feather="message-circle"></i>
+                    تواصل واتساب
+                </a>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i data-feather="check-circle"></i> أجهزة أصلية بتقنية حديثة
+                </div>
+                <div class="feature-item">
+                    <i data-feather="wifi"></i> تدعم كل الشبكات (فودافون، أورانج، اتصالات، وي)
+                </div>
+                <div class="feature-item">
+                    <i data-feather="shield"></i> ضمان رسمي لمدة 12 شهر
+                </div>
+                <div class="feature-item">
+                    <i data-feather="tool"></i> تركيب فوري وفنيين متخصصين
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="about reveal" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>من نحن</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>عن الشركة</h3>
+                    <p>Antwave شركة مصرية متخصصة في حلول وتقوية شبكات المحمول. هدفنا إن كل عميل يوصل لإشارة قوية
+                        وثابتة بدون أي مجهود أو تعقيد، وبجهاز مضمون وأداء فعلي على أرض الواقع.</p>
+                </div>
+                <div class="about-card">
+                    <h3>رؤيتنا ومهمتنا</h3>
+                    <p><strong>رؤيتنا:</strong> نكون الشركة رقم 1 في مصر في تقديم حلول تغطية فعّالة وبأسعار مناسبة لكل
+                        العملاء.</p>
+                    <p><strong>مهمتنا:</strong> نوصل لك أفضل إشارة ممكنة في أي مكان، وبأسرع وقت وبأعلى ضمان.</p>
+                </div>
+                <div class="about-card">
+                    <h3>قيمنا</h3>
+                    <ul class="values-list">
+                        <li><i data-feather="check"></i> المصداقية والأمانة</li>
+                        <li><i data-feather="check"></i> التركيب الاحترافي</li>
+                        <li><i data-feather="check"></i> خدمة ما بعد البيع</li>
+                        <li><i data-feather="check"></i> حلول مناسبة لكل الميزانيات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Services Section ========== -->
+    <section class="services reveal" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="settings"></i>
+                    </div>
+                    <h3>بيع وتركيب أجهزة تقوية الشبكات</h3>
+                    <p>أجهزة تدعم جميع الشبكات، شاملة هوائيات وكابلات وضبط كامل أثناء التركيب.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="briefcase"></i>
+                    </div>
+                    <h3>حلول للمصانع والشركات</h3>
+                    <p>أنظمة قوية ومجهزة لمساحات كبيرة ومبانٍ متعددة الأدوار والجدران السميكة.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="home"></i>
+                    </div>
+                    <h3>حلول للمنازل والفلل</h3>
+                    <p>تغطية كاملة داخل البيت من أول السطح لحد البدروم.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="tool"></i>
+                    </div>
+                    <h3>الصيانة والمعايرة</h3>
+                    <p>متابعة وضبط الجهاز لضمان أعلى أداء وقت الذروة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Products Section ========== -->
+    <section class="products reveal" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>أحدث المنتجات</h2>
+                <p>أقوى أجهزة تقوية الشبكات بأحدث التكنولوجيا العالمية</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product New -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/white_shark_new.png" alt="White Shark Repeater" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>White Shark Tri-Band</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم 3 ترددات مختلفة</li>
+                            <li><i data-feather="check-circle"></i> تغطية قوية ومستقرة</li>
+                            <li><i data-feather="shield"></i> شاشة عرض ذكية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن White Shark" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/HUAWEI QUAD.png" alt="Huawei Quad Band" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Huawei Quad Band High Power</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم جميع الترددات</li>
+                            <li><i data-feather="check-circle"></i> تغطية فائقة للمساحات الكبيرة</li>
+                            <li><i data-feather="shield"></i> ضمان استبدال فوري</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Huawei Quad Band" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/MGOLDEN SHARK.png" alt="Golden Shark" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Shark High Power</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم ذهبي مميز</li>
+                            <li><i data-feather="check-circle"></i> مثالي للمكالمات الصوتية</li>
+                            <li><i data-feather="shield"></i> جودة تصنيع عالية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Golden Shark" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/QUAD BAND SILVER.png" alt="Quad Band Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Quad Band Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> شاشة ديجيتال ذكية</li>
+                            <li><i data-feather="check-circle"></i> تحكم تلقائي في الإشارة</li>
+                            <li><i data-feather="shield"></i> هيكل معدني قوي</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Quad Band Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/WINGSTEL TRIBAND.png" alt="Wingstel Triband" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Wingstel Triband Jaguar</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم جاكوار الانسيابي</li>
+                            <li><i data-feather="check-circle"></i> ثلاثي التردد لأداء مستقر</li>
+                            <li><i data-feather="shield"></i> سهولة في التركيب</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Wingstel Triband" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/TRIBLE DISBLAY.png" alt="Triple Display" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Triple Display Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> 3 شاشات لعرض قوة الإشارة</li>
+                            <li><i data-feather="check-circle"></i> يدعم البيانات والمكالمات</li>
+                            <li><i data-feather="shield"></i> تكنولوجيا متطورة</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Triple Display" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/FIVE BAND.png" alt="Five Band Repeater" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Five Band Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم 5 ترددات مختلفة</li>
+                            <li><i data-feather="check-circle"></i> تغطية شاملة لكل الشبكات</li>
+                            <li><i data-feather="shield"></i> أحدث تكنولوجيا في السوق</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Five Band Repeater"
+                            class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK  SILVER.png" alt="Genuinetek Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم فضي أنيق</li>
+                            <li><i data-feather="check-circle"></i> شاشة عرض البيانات</li>
+                            <li><i data-feather="shield"></i> أداء قوي ومستقر</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Genuinetek Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK.png" alt="Genuinetek Gold" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Gold</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> الإصدار الذهبي المطور</li>
+                            <li><i data-feather="check-circle"></i> قوة تكبير إشارة عالية</li>
+                            <li><i data-feather="shield"></i> مناسب للمساحات الواسعة</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Genuinetek Gold" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GOLEN CL SIC.png" alt="Golden Classic" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Classic</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> التصميم الكلاسيكي الموثوق</li>
+                            <li><i data-feather="check-circle"></i> سهل التركيب والاستخدام</li>
+                            <li><i data-feather="shield"></i> تكلفة اقتصادية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Golden Classic" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Projects Section ========== -->
+    <section class="projects reveal" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>أعمالنا</h2>
+                <p>نماذج من مشاريع Antwave</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>مصنع في 6 أكتوبر</h3>
+                    <p>تركيب نظام تقوية كامل لمصنع، وضمان تغطية شاملة لخطوط الإنتاج.</p>
+                </div>
+                <div class="project-card">
+                    <h3>برج سكني بالمهندسين</h3>
+                    <p>حل مشكلة انقطاع المكالمات في الأدوار المرتفعة والسفلية.</p>
+                </div>
+                <div class="project-card">
+                    <h3>فيلا في القاهرة الجديدة</h3>
+                    <p>تغطية فيلا كاملة (حديقة، أدوار، رووف) بإشارة ممتازة.</p>
+                </div>
+                <div class="project-card">
+                    <h3>بدروم وجراج بالتجمع</h3>
+                    <p>تقوية الشبكة في أماكن انعدام الإشارة تماماً.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ Section ========== -->
+    <section class="faq reveal" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>الأسئلة الشائعة</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+
+                    <div class="faq-answer">
+                        <p>/sbin/lsmod | grep 8812au</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل بيدعم كل الشبكات؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم: فودافون – اتصالات – أورانج – وي.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل في ضمان؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ضمان سنة كاملة يشمل كل المكونات.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل لازم زيارة فني؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يفضل، علشان نحدد الجهاز الأنسب للمساحة ونوصلك لأعلى جودة إشارة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Contact Section ========== -->
+    <section class="contact-section reveal" id="contact">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>تواصل معنا</h2>
+                <p>اطلب زيارة فني لتحديد أنسب جهاز لمكانك</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="phone"></i></div>
+                        <div class="info-content">
+                            <h3>الهاتف</h3>
+                            <a href="tel:01125655647">01125655647</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="message-circle"></i></div>
+                        <div class="info-content">
+                            <h3>واتساب</h3>
+                            <a href="https://wa.me/201125655647">01125655647</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="map-pin"></i></div>
+                        <div class="info-content">
+                            <h3>العنوان</h3>
+                            <p>عين شمس، القاهرة، مصر</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="clock"></i></div>
+                        <div class="info-content">
+                            <h3>مواعيد العمل</h3>
+                            <p>9 ص – 10 م يومياً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Footer ========== -->
+    <footer>
+        <div class="container">
+            <h3>Antwave - Antwave</h3>
+            <p>الحل النهائي لمشاكل الشبكة في مصر</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Antwave. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JavaScript ========== -->
+    <script>
+        feather.replace();
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = navLinks.classList.contains('active') ? 'x' : 'menu';
+            mobileMenuBtn.innerHTML = `<i data-feather="${icon}"></i>`;
+            feather.replace();
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Scroll Reveal
+        const revealOnScroll = () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Antwave - الحل النهائي لمشكلة ضعف شبكة المحمول في مصر. أجهزة تقوية إشارة معتمدة للمنازل والشركات والمصانع.">
+    <meta name="keywords" content="تقوية الشبكة، Antwave، مقوي شبكة، فودافون، اتصالات، اورانج، وي، حلول الشبكات">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Antwave - Antwave | حلول تقوية شبكات المحمول">
+    <meta property="og:description" content="تمتع بإنترنت أسرع ومكالمات بدون تقطيع مع حلول Antwave المعتمدة.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo.png">
+
+    <title>Antwave - Antwave | شبكة قوية في كل مكان</title>
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+
+    <style>
+        /* ========== Reset & Variables ========== */
+        :root {
+            --primary-blue: #003B73;
+            --primary-dark: #002855;
+            --primary-orange: #FFA500;
+            --secondary-orange: #FFB732;
+            --accent-glow: rgba(255, 165, 0, 0.5);
+            --light-bg: #F0F4F8;
+            --white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-dark: #1A1A1A;
+            --text-gray: #555555;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        /* ========== Scrollbar ========== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-orange);
+        }
+
+        /* ========== Animations ========== */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(255, 165, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== Header & Nav ========== */
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-item:hover {
+            color: var(--primary-orange);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* ========== Hero Section ========== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001F3F 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            animation: float 60s linear infinite;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.2s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.4s backwards;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-orange), #FF8C00);
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 165, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        /* ========== Features Grid (Why Choose Us) ========== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            text-align: right;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            color: var(--primary-orange);
+            margin-left: 10px;
+        }
+
+        /* ========== General Layout ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-orange);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ========== About Section ========== */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .about-card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-card h3 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .values-list {
+            list-style: none;
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .values-list li i {
+            color: var(--primary-orange);
+        }
+
+        /* ========== Services Section ========== */
+        .services {
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary-blue);
+            transition: 0.5s ease;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        /* ========== Products Section ========== */
+        .products {
+            background-color: var(--white);
+            padding-bottom: 120px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image-wrapper {
+            width: 100%;
+            height: 320px;
+            background: radial-gradient(circle at center, #ffffff 0%, #f0f4f8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            /* Stylish Frame Effect */
+            margin: 15px;
+            width: calc(100% - 30px);
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(0, 59, 115, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(0, 59, 115, 0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .product-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .product-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .product-desc {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-top: auto;
+            text-align: right;
+            background: #fcfcfc;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .product-features li {
+            margin-bottom: 10px;
+            color: var(--text-gray);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-features li i {
+            color: #2ecc71;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .order-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+        }
+
+        /* ========== Projects Section ========== */
+        .projects {
+            background-color: var(--light-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-right: 5px solid var(--primary-orange);
+        }
+
+        .project-card:hover {
+            transform: translateX(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* ========== FAQ Section ========== */
+        .faq {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 25px;
+            background: none;
+            border: none;
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 25px 20px 25px;
+        }
+
+        /* ========== Contact Section ========== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001021 100%);
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .contact-section .section-title h2::after {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--white);
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .info-content p,
+        .info-content a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background-color: #000d1a;
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 30px;
+                box-shadow: var(--shadow-lg);
+                transition: 0.3s;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========== Top Bar ========== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:01125655647" class="contact-item">
+                    <i data-feather="phone" style="width: 16px; height: 16px;"></i>
+                    <span>01125655647</span>
+                </a>
+                <a href="https://wa.me/201125655647" class="contact-item">
+                    <i data-feather="message-circle" style="width: 16px; height: 16px;"></i>
+                    <span>واتساب</span>
+                </a>
+            </div>
+            <div>
+                <i data-feather="map-pin" style="width: 16px; height: 16px;"></i>
+                عين شمس، القاهرة، مصر
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Header ========== -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo-container">
+                <img src="assets/logo.png" alt="Antwave Logo" class="logo">
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-feather="menu"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#projects">أعمالنا</a></li>
+                <li><a href="#contact" class="btn btn-primary"
+                        style="padding: 8px 25px; font-size: 15px; box-shadow: none;">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>مرحباً بكم في Antwave</h1>
+            <p>في Antwave بنقدّم لك الحل النهائي لمشكلة ضعف شبكة المحمول في البيت، الشركة، المصنع أو أي مكان بيعاني
+                من سوء التغطية. استمتع بإنترنت أسرع ومكالمات بدون تقطيع.</p>
+
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i data-feather="phone-call"></i>
+                    اطلب الآن
+                </a>
+                <a href="https://wa.me/201125655647" class="btn btn-secondary">
+                    <i data-feather="message-circle"></i>
+                    تواصل واتساب
+                </a>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i data-feather="check-circle"></i> أجهزة أصلية بتقنية حديثة
+                </div>
+                <div class="feature-item">
+                    <i data-feather="wifi"></i> تدعم كل الشبكات (فودافون، أورانج، اتصالات، وي)
+                </div>
+                <div class="feature-item">
+                    <i data-feather="shield"></i> ضمان رسمي لمدة 12 شهر
+                </div>
+                <div class="feature-item">
+                    <i data-feather="tool"></i> تركيب فوري وفنيين متخصصين
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="about reveal" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>من نحن</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>عن الشركة</h3>
+                    <p>Antwave شركة مصرية متخصصة في حلول وتقوية شبكات المحمول. هدفنا إن كل عميل يوصل لإشارة قوية
+                        وثابتة بدون أي مجهود أو تعقيد، وبجهاز مضمون وأداء فعلي على أرض الواقع.</p>
+                </div>
+                <div class="about-card">
+                    <h3>رؤيتنا ومهمتنا</h3>
+                    <p><strong>رؤيتنا:</strong> نكون الشركة رقم 1 في مصر في تقديم حلول تغطية فعّالة وبأسعار مناسبة لكل
+                        العملاء.</p>
+                    <p><strong>مهمتنا:</strong> نوصل لك أفضل إشارة ممكنة في أي مكان، وبأسرع وقت وبأعلى ضمان.</p>
+                </div>
+                <div class="about-card">
+                    <h3>قيمنا</h3>
+                    <ul class="values-list">
+                        <li><i data-feather="check"></i> المصداقية والأمانة</li>
+                        <li><i data-feather="check"></i> التركيب الاحترافي</li>
+                        <li><i data-feather="check"></i> خدمة ما بعد البيع</li>
+                        <li><i data-feather="check"></i> حلول مناسبة لكل الميزانيات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Services Section ========== -->
+    <section class="services reveal" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="settings"></i>
+                    </div>
+                    <h3>بيع وتركيب أجهزة تقوية الشبكات</h3>
+                    <p>أجهزة تدعم جميع الشبكات، شاملة هوائيات وكابلات وضبط كامل أثناء التركيب.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="briefcase"></i>
+                    </div>
+                    <h3>حلول للمصانع والشركات</h3>
+                    <p>أنظمة قوية ومجهزة لمساحات كبيرة ومبانٍ متعددة الأدوار والجدران السميكة.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="home"></i>
+                    </div>
+                    <h3>حلول للمنازل والفلل</h3>
+                    <p>تغطية كاملة داخل البيت من أول السطح لحد البدروم.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-feather="tool"></i>
+                    </div>
+                    <h3>الصيانة والمعايرة</h3>
+                    <p>متابعة وضبط الجهاز لضمان أعلى أداء وقت الذروة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Products Section ========== -->
+    <section class="products reveal" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>أحدث المنتجات</h2>
+                <p>أقوى أجهزة تقوية الشبكات بأحدث التكنولوجيا العالمية</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product New -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/white_shark_new.png" alt="White Shark Repeater" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>White Shark Tri-Band</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <p class="product-long-desc">WHITE SHARK: يغطي الجهاز 100-150 متر مربع بالهوائي الواحد، مع توسيع التغطية بزيادة الهوائيات لضمان اتصال مستقر.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم 3 ترددات مختلفة</li>
+                            <li><i data-feather="check-circle"></i> تغطية قوية ومستقرة</li>
+                            <li><i data-feather="shield"></i> شاشة عرض ذكية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن White Shark" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/HUAWEI QUAD.png" alt="Huawei Quad Band" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Huawei Quad Band High Power</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <p class="product-long-desc">Huawei Quad Band High Power: يغطي الجهاز 100-150 متر مربع، ويدعم شبكات مصر بترددات 2G-5G، مع توسيع التغطية بإضافة الهوائيات.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم جميع الترددات</li>
+                            <li><i data-feather="check-circle"></i> تغطية فائقة للمساحات الكبيرة</li>
+                            <li><i data-feather="shield"></i> ضمان استبدال فوري</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Huawei Quad Band" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/MGOLDEN SHARK.png" alt="Golden Shark" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Shark High Power</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم ذهبي مميز</li>
+                            <li><i data-feather="check-circle"></i> مثالي للمكالمات الصوتية</li>
+                            <li><i data-feather="shield"></i> جودة تصنيع عالية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Golden Shark" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/QUAD BAND SILVER.png" alt="Quad Band Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Quad Band Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <p class="product-long-desc">Quad Band Silver: يغطي الجهاز 100-150 متر مربع، وتوسيع التغطية بإضافة هوائيات يضمن اتصالًا قويًا ومستقرًا للمستخدمين.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> شاشة ديجيتال ذكية</li>
+                            <li><i data-feather="check-circle"></i> تحكم تلقائي في الإشارة</li>
+                            <li><i data-feather="shield"></i> هيكل معدني قوي</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Quad Band Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/WINGSTEL TRIBAND.png" alt="Wingstel Triband" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Wingstel Triband Jaguar</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <p class="product-long-desc">Wingstel Triband Jaguar: يغطي الجهاز 100-150 متر مربع، يدعم جميع الشبكات الأربع في مصر بترددات 2G، 3G، 4G، لتحسين الإشارة والاتصال.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم جاكوار الانسيابي</li>
+                            <li><i data-feather="check-circle"></i> ثلاثي التردد لأداء مستقر</li>
+                            <li><i data-feather="shield"></i> سهولة في التركيب</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Wingstel Triband" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/TRIBLE DISBLAY.png" alt="Triple Display" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Triple Display Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> 3 شاشات لعرض قوة الإشارة</li>
+                            <li><i data-feather="check-circle"></i> يدعم البيانات والمكالمات</li>
+                            <li><i data-feather="shield"></i> تكنولوجيا متطورة</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Triple Display" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/FIVE BAND.png" alt="Five Band Repeater" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Five Band Repeater</h3>
+                        <span class="product-desc">2G / 3G / 4G / 5G</span>
+                        <p class="product-long-desc">Five Band Repeater: يغطي الجهاز 100-150 متر مربع، ويدعم شبكات 2G، 3G، 4G، و5G مع توسيع التغطية.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> يدعم 5 ترددات مختلفة</li>
+                            <li><i data-feather="check-circle"></i> تغطية شاملة لكل الشبكات</li>
+                            <li><i data-feather="shield"></i> أحدث تكنولوجيا في السوق</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Five Band Repeater"
+                            class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK  SILVER.png" alt="Genuinetek Silver" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Silver</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <p class="product-long-desc">Genuinetek Silver: يغطي الجهاز 100 متر مربع لفودافون وأورانج، مثالي للاستخدام في الشقق فقط، يفضل تردد 2G.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> تصميم فضي أنيق</li>
+                            <li><i data-feather="check-circle"></i> شاشة عرض البيانات</li>
+                            <li><i data-feather="shield"></i> أداء قوي ومستقر</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Genuinetek Silver" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GENUINETEK.png" alt="Genuinetek Gold" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Genuinetek Gold</h3>
+                        <span class="product-desc">2G / 3G / 4G</span>
+                        <p class="product-long-desc">Genuinetek Gold: يغطي الجهاز 100-150 متر مربع، ويدعم شبكات مصر بترددات 2G، 3G، 4G، و5G؛ مناسب للمنازل والشقق مع إمكانية توسيع التغطية بإضافة هوائيات خارجية لثبات وقوة إشارة أعلى.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> الإصدار الذهبي المطور</li>
+                            <li><i data-feather="check-circle"></i> قوة تكبير إشارة عالية</li>
+                            <li><i data-feather="shield"></i> مناسب للمساحات الواسعة</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Genuinetek Gold" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="assets/GOLEN CL SIC.png" alt="Golden Classic" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h3>Golden Classic</h3>
+                        <span class="product-desc">2G / 3G</span>
+                        <p class="product-long-desc">Golden Classic: يغطي الجهاز 100-150 متر مربع، ويدعم شبكات مصر بترددات 2G و4G مع توسيع التغطية.</p>
+                        <ul class="product-features">
+                            <li><i data-feather="check-circle"></i> التصميم الكلاسيكي الموثوق</li>
+                            <li><i data-feather="check-circle"></i> سهل التركيب والاستخدام</li>
+                            <li><i data-feather="shield"></i> تكلفة اقتصادية</li>
+                        </ul>
+                        <a href="https://wa.me/201125655647?text=أريد الاستفسار عن Golden Classic" class="order-btn">
+                            <i data-feather="message-circle"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Projects Section ========== -->
+    <section class="projects reveal" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>أعمالنا</h2>
+                <p>نماذج من مشاريع Antwave</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>مصنع في 6 أكتوبر</h3>
+                    <p>تركيب نظام تقوية كامل لمصنع، وضمان تغطية شاملة لخطوط الإنتاج.</p>
+                </div>
+                <div class="project-card">
+                    <h3>برج سكني بالمهندسين</h3>
+                    <p>حل مشكلة انقطاع المكالمات في الأدوار المرتفعة والسفلية.</p>
+                </div>
+                <div class="project-card">
+                    <h3>فيلا في القاهرة الجديدة</h3>
+                    <p>تغطية فيلا كاملة (حديقة، أدوار، رووف) بإشارة ممتازة.</p>
+                </div>
+                <div class="project-card">
+                    <h3>بدروم وجراج بالتجمع</h3>
+                    <p>تقوية الشبكة في أماكن انعدام الإشارة تماماً.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ Section ========== -->
+    <section class="faq reveal" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>الأسئلة الشائعة</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+
+                    <div class="faq-answer">
+                        <p>/sbin/lsmod | grep 8812au</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل بيدعم كل الشبكات؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم: فودافون – اتصالات – أورانج – وي.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل في ضمان؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ضمان سنة كاملة يشمل كل المكونات.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل لازم زيارة فني؟</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يفضل، علشان نحدد الجهاز الأنسب للمساحة ونوصلك لأعلى جودة إشارة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Contact Section ========== -->
+    <section class="contact-section reveal" id="contact">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>تواصل معنا</h2>
+                <p>اطلب زيارة فني لتحديد أنسب جهاز لمكانك</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="phone"></i></div>
+                        <div class="info-content">
+                            <h3>الهاتف</h3>
+                            <a href="tel:01125655647">01125655647</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="message-circle"></i></div>
+                        <div class="info-content">
+                            <h3>واتساب</h3>
+                            <a href="https://wa.me/201125655647">01125655647</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="map-pin"></i></div>
+                        <div class="info-content">
+                            <h3>العنوان</h3>
+                            <p>عين شمس، القاهرة، مصر</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="clock"></i></div>
+                        <div class="info-content">
+                            <h3>مواعيد العمل</h3>
+                            <p>9 ص – 10 م يومياً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Footer ========== -->
+    <footer>
+        <div class="container">
+            <h3>Antwave - Antwave</h3>
+            <p>الحل النهائي لمشاكل الشبكة في مصر</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Antwave. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JavaScript ========== -->
+    <script>
+        feather.replace();
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = navLinks.classList.contains('active') ? 'x' : 'menu';
+            mobileMenuBtn.innerHTML = `<i data-feather="${icon}"></i>`;
+            feather.replace();
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Scroll Reveal
+        const revealOnScroll = () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+
+>>>>>>> 9391e04 (Add detailed product descriptions)
+</html>
