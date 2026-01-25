@@ -853,7 +853,51 @@
             padding-top: 20px;
             margin-top: 30px;
             color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: visible;
         }
+
+        .developer-credit {
+            margin: 6px 0 0;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .footer-bottom .copyright {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            clear: both;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .developer-credit .wa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: none;
+            transition: opacity 0.12s ease, transform 0.12s ease;
+        }
+
+        .developer-credit .wa-link:hover,
+        .developer-credit .wa-link:focus {
+            opacity: 0.95;
+            transform: none;
+        }
+
+        .developer-credit .wa-icon { display: none; }
+
+        .developer-credit .wa-text { display: inline-block; }
 
         /* ========== Responsive ========== */
         @media (max-width: 768px) {
@@ -1104,6 +1148,9 @@
                     <div class="product-content">
                         <h3>Golden Shark High Power</h3>
                         <span class="product-desc">2G / 3G</span>
+                        <div class="product-description">
+                            <p><strong>🔶 القوة والثبات:</strong> يغطي الجهاز 100-150 متر مربع ويعزز التغطية بزيادة الهوائيات، يدعم جميع الشبكات بترددات 2G و3G.</p>
+                        </div>
                         <ul class="product-features">
                             <li><i data-feather="check-circle"></i> تصميم ذهبي مميز</li>
                             <li><i data-feather="check-circle"></i> مثالي للمكالمات الصوتية</li>
@@ -1167,6 +1214,9 @@
                     <div class="product-content">
                         <h3>Triple Display Repeater</h3>
                         <span class="product-desc">2G / 3G / 4G</span>
+                        <div class="product-description">
+                            <p><strong>📊 التحكم الذكي:</strong> يغطي الجهاز 100-150 متر مربع، ومع زيادة الهوائيات تتوسع التغطية لضمان اتصال قوي وسلس.</p>
+                        </div>
                         <ul class="product-features">
                             <li><i data-feather="check-circle"></i> 3 شاشات لعرض قوة الإشارة</li>
                             <li><i data-feather="check-circle"></i> يدعم البيانات والمكالمات</li>
@@ -1394,7 +1444,8 @@
             <h3>Antwave - Antwave</h3>
             <p>الحل النهائي لمشاكل الشبكة في مصر</p>
             <div class="footer-bottom">
-                <p>&copy; 2025 Antwave. جميع الحقوق محفوظة.</p>
+                <p class="copyright">&copy; 2025 Antwave. جميع الحقوق محفوظة.</p>
+                <p class="developer-credit">Developed BY /01002137288</p>
             </div>
         </div>
     </footer>
