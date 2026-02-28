@@ -1,115 +1,124 @@
-```
 // script.js
-// Ultra-Modern Animation & Logic
+// Google Ads Conversion Tracking
 
-// 1. Scroll Animation Observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px" // Removed negative margin to ensure early triggering
-};
+// ========== Google Ads Conversion Tracking ==========
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.remove('is-hidden');
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Only animate once
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-    el.classList.add('is-hidden'); // Hide initially via JS
-    observer.observe(el);
-});
-
-// Safety Fallback: If animation fails to trigger (e.g. tab inactive), show all after 2s
-setTimeout(() => {
-    document.querySelectorAll('.animate-on-scroll.is-hidden').forEach(el => {
-        el.classList.remove('is-hidden');
-        el.classList.add('is-visible');
-    });
-}, 2000);
-
-// 2. Header Scroll Effect
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 10px 30px rgba(10, 35, 81, 0.1)";
-        header.style.padding = "0.5rem 0";
-    } else {
-        header.style.boxShadow = "none";
-        header.style.padding = "0";
+// Track conversion event
+function trackConversion(eventName, eventParams) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, eventParams);
     }
-});
+}
 
-// 3. Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+// Extract product name from WhatsApp URL
+function extractProductName(url) {
+    const match = url.match(/text=.*?عن\s+(.+?)(?:$|&)/);
+    if (match) {
+        return decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+    return '';
+}
+
+// WhatsApp Click Handler
+function handleWhatsAppClick(event, buttonId, originalUrl) {
+    event.preventDefault();
+    
+    const productName = extractProductName(originalUrl);
+    
+    // Track the event
+    trackConversion('whatsapp_click', {
+        'send_to': 'AW-17929209756',
+        'button_id': buttonId,
+        'product_name': productName || 'general'
+    });
+    
+    // Also track for TikTok if available
+    if (typeof ttq !== 'undefined') {
+        ttq.track('Contact', {
+            content_name: productName || 'WhatsApp Contact',
+            content_type: 'whatsapp'
+        });
+    }
+    
+    // Redirect to thank you page
+    const thankYouUrl = 'thank-you.html?type=whatsapp&dest=' + encodeURIComponent(originalUrl) + '&product=' + encodeURIComponent(productName || '');
+    window.location.href = thankYouUrl;
+}
+
+// Phone Click Handler
+function handlePhoneClick(event, buttonId) {
+    event.preventDefault();
+    
+    // Track the event
+    trackConversion('phone_click', {
+        'send_to': 'AW-17929209756',
+        'button_id': buttonId
+    });
+    
+    // Also track for TikTok if available
+    if (typeof ttq !== 'undefined') {
+        ttq.track('Contact', {
+            content_name: 'Phone Call',
+            content_type: 'phone'
+        });
+    }
+    
+    // Redirect to thank you page
+    const thankYouUrl = 'thank-you.html?type=phone&dest=tel:01125655647';
+    window.location.href = thankYouUrl;
+}
+
+// Initialize conversion tracking for all buttons
+function initConversionTracking() {
+    // WhatsApp buttons configuration
+    var whatsappButtons = [
+        { id: 'wa-btn-header', selector: '#wa-btn-header' },
+        { id: 'wa-btn-hero', selector: '#wa-btn-hero' },
+        { id: 'wa-btn-white-shark', selector: '#wa-btn-white-shark' },
+        { id: 'wa-btn-huawei-quad', selector: '#wa-btn-huawei-quad' },
+        { id: 'wa-btn-golden-shark', selector: '#wa-btn-golden-shark' },
+        { id: 'wa-btn-quad-silver', selector: '#wa-btn-quad-silver' },
+        { id: 'wa-btn-wingstel', selector: '#wa-btn-wingstel' },
+        { id: 'wa-btn-triple-display', selector: '#wa-btn-triple-display' },
+        { id: 'wa-btn-five-band', selector: '#wa-btn-five-band' },
+        { id: 'wa-btn-genuinetek-silver', selector: '#wa-btn-genuinetek-silver' },
+        { id: 'wa-btn-genuinetek-gold', selector: '#wa-btn-genuinetek-gold' },
+        { id: 'wa-btn-golden-classic', selector: '#wa-btn-golden-classic' },
+        { id: 'wa-btn-contact', selector: '#wa-btn-contact' }
+    ];
+
+    // Phone buttons configuration
+    var phoneButtons = [
+        { id: 'phone-btn-header', selector: '#phone-btn-header' },
+        { id: 'phone-btn-contact', selector: '#phone-btn-contact' }
+    ];
+
+    // Attach event listeners to WhatsApp buttons
+    whatsappButtons.forEach(function(btn) {
+        var element = document.querySelector(btn.selector);
+        if (element) {
+            element.addEventListener('click', function(e) {
+                handleWhatsAppClick(e, btn.id, element.href);
             });
         }
     });
-});
 
-// 5. Animated Background Particles (DOM)
-const particlesContainer = document.getElementById('particles');
-if (particlesContainer) {
-    const particleCount = 20;
-
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random positioning and delay
-        particle.style.left = Math.random() * 100 + 'vw';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's'; // 10-20s
-        particle.style.animationDelay = (Math.random() * 10) * -1 + 's';
-        
-        particlesContainer.appendChild(particle);
-    }
-
-    // Generate Stars
-    const starCount = 150;
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        
-        // Random positioning
-        star.style.left = Math.random() * 100 + 'vw';
-        star.style.top = Math.random() * 100 + 'vh';
-        star.style.animationDelay = Math.random() * 2 + 's';
-        
-        // More stars are "shooting stars"
-        if (Math.random() > 0.8) {
-            star.classList.add('moving');
-            star.style.animationDelay = Math.random() * 4 + 's';
+    // Attach event listeners to Phone buttons
+    phoneButtons.forEach(function(btn) {
+        var element = document.querySelector(btn.selector);
+        if (element) {
+            element.addEventListener('click', function(e) {
+                handlePhoneClick(e, btn.id);
+            });
         }
-        
-        particlesContainer.appendChild(star);
-    }
-}
-// 6. Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
+    console.log('Conversion tracking initialized');
 }
-```
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConversionTracking);
+} else {
+    initConversionTracking();
+}
