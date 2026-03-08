@@ -1509,6 +1509,47 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
+
+        // WhatsApp Conversion Tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all WhatsApp buttons
+            const waButtons = document.querySelectorAll('a[href*="wa.me"]');
+            
+            waButtons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    // Get button ID or product name
+                    const buttonId = this.id || 'unknown';
+                    const productName = this.href.includes('text=') 
+                        ? decodeURIComponent(this.href.split('text=')[1]) 
+                        : 'General Contact';
+                    
+                    // Track conversion in Google Ads
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-17929209756/WhatsAppClick',
+                            'event_category': 'WhatsApp',
+                            'event_label': productName,
+                            'value': 1.0,
+                            'currency': 'EGP'
+                        });
+                    }
+                    
+                    // Track in TikTok Pixel
+                    if (typeof ttq === 'object' && ttq.track) {
+                        ttq.track('Contact', {
+                            content_name: productName,
+                            content_type: 'WhatsApp'
+                        });
+                    }
+                    
+                    // Log for debugging (remove in production)
+                    console.log('WhatsApp Click Tracked:', {
+                        buttonId: buttonId,
+                        product: productName
+                    });
+                });
+            });
+        });
     </script>
     
     <!-- Conversion Tracking Script -->
