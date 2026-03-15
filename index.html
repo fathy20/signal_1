@@ -918,6 +918,81 @@
 
         .developer-credit .wa-text { display: inline-block; }
 
+        /* ========== Pulse Button ========== */
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 165, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+        }
+
+        .btn-pulse {
+            animation: pulse-btn 1.8s infinite;
+        }
+
+        /* ========== Service Images ========== */
+        .service-img-wrapper {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+            margin: -40px -30px 20px;
+            width: calc(100% + 60px);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+
+        /* ========== Project Cards with Images ========== */
+        .project-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .project-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-result {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            color: #2ecc71;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .project-result i {
+            width: 16px;
+            height: 16px;
+            color: #2ecc71;
+        }
+
         /* ========== Responsive ========== */
         @media (max-width: 768px) {
             .top-bar {
@@ -1003,20 +1078,20 @@
     <!-- ========== Hero Section ========== -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>مرحباً بكم في Antwave</h1>
-            <p>في Antwave بنقدّم لك الحل النهائي لمشكلة ضعف شبكة المحمول في البيت، الشركة، المصنع أو أي مكان بيعاني
-                من سوء التغطية. استمتع بإنترنت أسرع ومكالمات بدون تقطيع.</p>
+            <h1>وداعاً لضعف الشبكة نهائياً</h1>
+            <p>تركيب أحدث أجهزة تقوية الشبكة في مصر بضمان عام ومعاينة فورية وتركيب مجاني</p>
 
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i data-feather="phone-call"></i>
-                    اطلب الآن
-                </a>
-                <a href="https://wa.me/201125655647" class="btn btn-secondary" id="wa-btn-hero">
+                <a href="https://wa.me/201125655647" class="btn btn-primary btn-pulse" id="wa-btn-hero">
                     <i data-feather="message-circle"></i>
-                    تواصل واتساب
+                    تواصل معنا الآن
+                </a>
+                <a href="tel:01125655647" class="btn btn-secondary" id="phone-btn-hero">
+                    <i data-feather="phone-call"></i>
+                    اتصل بنا
                 </a>
             </div>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">تواصل معنا لتحسين الشبكة الآن</p>
 
             <div class="features-grid">
                 <div class="feature-item">
@@ -1031,36 +1106,8 @@
                 <div class="feature-item">
                     <i data-feather="tool"></i> تركيب فوري وفنيين متخصصين
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== About Section ========== -->
-    <section class="about reveal" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>من نحن</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>عن الشركة</h3>
-                    <p>Antwave شركة مصرية متخصصة في حلول وتقوية شبكات المحمول. هدفنا إن كل عميل يوصل لإشارة قوية
-                        وثابتة بدون أي مجهود أو تعقيد، وبجهاز مضمون وأداء فعلي على أرض الواقع.</p>
-                </div>
-                <div class="about-card">
-                    <h3>رؤيتنا ومهمتنا</h3>
-                    <p><strong>رؤيتنا:</strong> نكون الشركة رقم 1 في مصر في تقديم حلول تغطية فعّالة وبأسعار مناسبة لكل
-                        العملاء.</p>
-                    <p><strong>مهمتنا:</strong> نوصل لك أفضل إشارة ممكنة في أي مكان، وبأسرع وقت وبأعلى ضمان.</p>
-                </div>
-                <div class="about-card">
-                    <h3>قيمنا</h3>
-                    <ul class="values-list">
-                        <li><i data-feather="check"></i> المصداقية والأمانة</li>
-                        <li><i data-feather="check"></i> التركيب الاحترافي</li>
-                        <li><i data-feather="check"></i> خدمة ما بعد البيع</li>
-                        <li><i data-feather="check"></i> حلول مناسبة لكل الميزانيات</li>
-                    </ul>
+                <div class="feature-item" style="background: rgba(255,165,0,0.3); border: 1px solid rgba(255,165,0,0.5);">
+                    <i data-feather="gift"></i> تركيب مجاني
                 </div>
             </div>
         </div>
@@ -1074,6 +1121,9 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop" alt="بيع وتركيب أجهزة تقوية الشبكات" class="service-img">
+                    </div>
                     <div class="service-icon">
                         <i data-feather="settings"></i>
                     </div>
@@ -1082,6 +1132,9 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop" alt="حلول للمصانع والشركات" class="service-img">
+                    </div>
                     <div class="service-icon">
                         <i data-feather="briefcase"></i>
                     </div>
@@ -1090,6 +1143,9 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=200&fit=crop" alt="حلول للمنازل والفلل" class="service-img">
+                    </div>
                     <div class="service-icon">
                         <i data-feather="home"></i>
                     </div>
@@ -1098,6 +1154,9 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=200&fit=crop" alt="الصيانة والمعايرة" class="service-img">
+                    </div>
                     <div class="service-icon">
                         <i data-feather="tool"></i>
                     </div>
@@ -1345,20 +1404,44 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>مصنع في 6 أكتوبر</h3>
-                    <p>تركيب نظام تقوية كامل لمصنع، وضمان تغطية شاملة لخطوط الإنتاج.</p>
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=220&fit=crop" alt="مصنع في 6 أكتوبر" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>مصنع في 6 أكتوبر</h3>
+                        <p>تركيب نظام تقوية كامل لمصنع، وضمان تغطية شاملة لخطوط الإنتاج.</p>
+                        <span class="project-result"><i data-feather="check-circle"></i> تغطية كاملة وممتازة</span>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>برج سكني بالمهندسين</h3>
-                    <p>حل مشكلة انقطاع المكالمات في الأدوار المرتفعة والسفلية.</p>
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=220&fit=crop" alt="برج سكني بالمهندسين" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>برج سكني بالمهندسين</h3>
+                        <p>حل مشكلة انقطاع المكالمات في الأدوار المرتفعة والسفلية.</p>
+                        <span class="project-result"><i data-feather="check-circle"></i> حل مشكلة الأدوار المرتفعة</span>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>فيلا في القاهرة الجديدة</h3>
-                    <p>تغطية فيلا كاملة (حديقة، أدوار، رووف) بإشارة ممتازة.</p>
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=400&h=220&fit=crop" alt="فيلا في القاهرة الجديدة" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>فيلا في القاهرة الجديدة</h3>
+                        <p>تغطية فيلا كاملة (حديقة، أدوار، رووف) بإشارة ممتازة.</p>
+                        <span class="project-result"><i data-feather="check-circle"></i> إشارة ممتازة في كل الأدوار</span>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>بدروم وجراج بالتجمع</h3>
-                    <p>تقوية الشبكة في أماكن انعدام الإشارة تماماً.</p>
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400&h=220&fit=crop" alt="بدروم وجراج بالتجمع" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>بدروم وجراج بالتجمع</h3>
+                        <p>تقوية الشبكة في أماكن انعدام الإشارة تماماً.</p>
+                        <span class="project-result"><i data-feather="check-circle"></i> إشارة قوية تحت الأرض</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1452,6 +1535,37 @@
                             <p>9 ص – 10 م يومياً</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="about reveal" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>من نحن</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>عن الشركة</h3>
+                    <p>Antwave شركة مصرية متخصصة في حلول وتقوية شبكات المحمول. هدفنا إن كل عميل يوصل لإشارة قوية
+                        وثابتة بدون أي مجهود أو تعقيد، وبجهاز مضمون وأداء فعلي على أرض الواقع.</p>
+                </div>
+                <div class="about-card">
+                    <h3>رؤيتنا ومهمتنا</h3>
+                    <p><strong>رؤيتنا:</strong> نكون الشركة رقم 1 في مصر في تقديم حلول تغطية فعّالة وبأسعار مناسبة لكل
+                        العملاء.</p>
+                    <p><strong>مهمتنا:</strong> نوصل لك أفضل إشارة ممكنة في أي مكان، وبأسرع وقت وبأعلى ضمان.</p>
+                </div>
+                <div class="about-card">
+                    <h3>قيمنا</h3>
+                    <ul class="values-list">
+                        <li><i data-feather="check"></i> المصداقية والأمانة</li>
+                        <li><i data-feather="check"></i> التركيب الاحترافي</li>
+                        <li><i data-feather="check"></i> خدمة ما بعد البيع</li>
+                        <li><i data-feather="check"></i> حلول مناسبة لكل الميزانيات</li>
+                    </ul>
                 </div>
             </div>
         </div>
